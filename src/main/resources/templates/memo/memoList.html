@@ -22,7 +22,9 @@
 				
 				<!-- if~else로 처리해주세요(공개글인 경우는 상세보기로 이동할 수 있습니다) -->
 				<td th:if="${vo.secret} == 'n'">비밀글입니다</td>
-				<td th:unless="${vo.secret} == 'n'">[[${vo.memo}]]</td>
+				<td th:unless="${vo.secret} == 'n'">
+					<a th:href="@{memoDetail(mno=${vo.mno})}">[[${vo.memo}]]</a>
+				</td>
 				
 				<td>[[${vo.phone}]]</td>
 				<td>[[${vo.secret}]]</td>
